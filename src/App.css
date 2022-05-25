@@ -5,6 +5,7 @@
 .layout {
     display: flex;
     flex-direction: column;
+    padding-left: 27px;
 }
 .layout {
     display: flex;
