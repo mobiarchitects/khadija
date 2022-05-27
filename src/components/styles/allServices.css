@@ -1,3 +1,56 @@
 .allservices {
+    display: flex;
+    flex-direction: column;
+}
+.title-services {
+    height: 21px;
+    width: 71px;
+    color: #101F53;
+    font-family: "SF Pro Display";
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 21px;
+    margin-left: 27px;
+    margin-top: 23px;
+}
+.all-ser-item {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
     
+    height: 120px;
+    width: 154px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.03);
+}
+.icon-ser {
+    width: 25px;
+    height: 25px;
+    background-color: #EEF0FD;
+    padding: 15px;
+    border-radius: 50%;
+    margin-left: 40px;
+}
+.icon-tit{
+    height: 16px;
+    width: 138px;
+    color: #101F53;
+    font-family: "SF Pro Display";
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.06px;
+    line-height: 16px;
+    text-align: center;
+}
+.ser-all {
+    width: 56% !important;
+    display: flex;
+    flex-direction: row;
+    margin-top: 22px;
+    margin-left: 27px;
+    flex-wrap: wrap;
 }

@@ -1,4 +1,8 @@
-/* .dash {
+.dash {
+    display: flex;
+    flex-direction: column;
+}
+.dash-title {
     height: 21px;
     width: 91px;
     color: #101F53;
@@ -7,4 +11,57 @@
     font-weight: bold;
     letter-spacing: 0;
     line-height: 21px;
-} */
+    padding-left: 27px;
+    padding-top: 27px;
+}
+.dash-item {
+    padding-left: 27px;
+    padding-top: 27px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 15px;
+}
+.dash-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    height: 90px;
+  width: 270px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.03);
+}
+.title-dash-item{
+    height: 36px;
+    width: 72px !important;
+    color: #101F53;
+    font-family: "SF Pro Display";
+    font-size: 14px;
+    letter-spacing: -0.06px;
+    line-height: 18px;
+    padding-left: 0px !important;
+    margin-top: 20px;
+}
+.icon {
+  height: 30px;
+  padding: 13px !important;
+  border-radius: 6px;
+  background-color: #EEF0FD;
+  margin-top: 18px;
+  margin-left: 20px;
+}
+.number {
+    height: 29px;
+    width: 16px;
+    color: #101F53;
+    font-family: "SF Pro Display";
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -0.11px;
+    line-height: 29px;
+    margin-top: 28px;
+    margin-right: 20px;
+}
