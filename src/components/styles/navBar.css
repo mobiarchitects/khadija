@@ -3,7 +3,8 @@
     flex-direction: row;  
     justify-content: space-between !important;
     background-color: #fff;
-    min-width: 1173px;
+    /* min-width: 1173px; */
+    width: 1170px;
 
 }
 .input {

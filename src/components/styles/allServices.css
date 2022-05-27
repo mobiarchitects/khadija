@@ -1,10 +1,11 @@
 .allservices {
     display: flex;
     flex-direction: column;
+    width: 60%;
 }
 .title-services {
-    height: 21px;
-    width: 71px;
+    /* height: 21px;
+    width: 71px; */
     color: #101F53;
     font-family: "SF Pro Display";
     font-size: 18px;
@@ -20,7 +21,6 @@
     margin-right: 10px;
     margin-bottom: 10px;
     justify-content: center;
-    
     height: 120px;
     width: 154px;
     border-radius: 4px;
@@ -39,7 +39,7 @@
     height: 16px;
     width: 138px;
     color: #101F53;
-    font-family: "SF Pro Display";
+    
     font-size: 14px;
     font-weight: bold;
     letter-spacing: -0.06px;
@@ -47,7 +47,7 @@
     text-align: center;
 }
 .ser-all {
-    width: 56% !important;
+    /* width: 60% !important; */
     display: flex;
     flex-direction: row;
     margin-top: 22px;
