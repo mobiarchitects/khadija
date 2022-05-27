@@ -1,5 +1,38 @@
 .sidebar {
-    min-width: 13%;
-    background-color: blue;
+    min-width: 15%;
+    display: flex;
+    flex-direction: column;
+    background-color: #101F53;
     height: 1000px;
+    text-align: center;
+}
+.logo-sidebar {
+    display: inline-block;
+    margin-top: 36px;
+    margin-bottom: 20px;
+}
+.nav-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-left: 15px;
+    
+}
+.nav-sidebar-item {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+   
+}
+
+.nav-title {
+   padding-left: 4px;
+   padding-top: 5px !important;
+   font-size: 14px;
+   font-weight: bold;
+   color: #fff;
+   font-family: Metropolis;
+}
+.space {
+    height: 20px !important;
 }
