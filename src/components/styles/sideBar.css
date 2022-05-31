@@ -3,13 +3,13 @@
     display: flex;
     flex-direction: column;
     background-color: #101F53;
-    height: 1000px;
+    /* height: 1000px; */
     text-align: center;
 }
 .logo-sidebar {
     display: inline-block;
     margin-top: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .nav-sidebar {
     display: flex;

@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: row;
     height: 175px;
-    width: 457px;
+    width: 457px !important;
     border-radius: 4px;
     background-color: #101F53;
 }
 .user {
-    width: 50%;
+    /* width: 50%; */
     display: flex;
     flex-direction: column;
     color: #fff;
@@ -28,11 +28,12 @@
 }
 .btn{
     height: 42px;
-    width: 180px;
+    width: 170px;
     border-radius: 6px;
     background-color: #1F8EC6;
     color: #FFFFFF;
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+    border: none;
 }

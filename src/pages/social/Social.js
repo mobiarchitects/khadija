@@ -1,5 +1,22 @@
 import React from 'react';
+import AdministratifSer from '../../components/servicesAdministratif/AdministratifSer';
+import Profile from '../../components/profile/Profile';
+import News from '../../components/actualites/News';
+import ListServAdmin from '../../components/servicesAdministratif/ListServAdmin';
+
+
 
 export default function Social() {
-  return <div>Social</div>;
+  return (  <div style={{display:'flex' , flexDirection:'row'}}>
+      <div style={{display:'flex', flexDirection:'column'}}>
+        <AdministratifSer />
+        <ListServAdmin />
+        </div>
+      <div style={{display:'flex' , flexDirection:'column' , marginTop:'68px' , marginRight:'6px'}}>
+        <div><Profile /></div>
+        <div style={{marginTop:"20px"}}>
+          <News />
+        </div>
+      </div>
+    </div>);
 }

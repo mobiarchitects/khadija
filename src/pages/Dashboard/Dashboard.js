@@ -15,9 +15,10 @@ export default function Dashboard() {
             display: 'flex',
             flexDirection: 'column',
             marginTop: '66px',
+             marginRight:'6px'
           }}>
           <Profile />
-          <News />
+          <div style={{marginTop:'20px'}}><News /></div>
         </div>
       </div>
     </div>
