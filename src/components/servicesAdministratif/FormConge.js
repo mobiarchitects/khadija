@@ -1,58 +1,59 @@
-import React from 'react';
+import { useState } from 'react';
 import '../styles/allServices.css';
+import InputProjet from './InputProjet';
 
 export default function FormConge() {
+  const [dateDebut, setDateDebut] = useState('');
+  const [dateFin, setDateFin] = useState('');
+  const [absence, setAbsence] = useState('Mensuel');
+
+  console.log(absence);
   return (
     <>
       <div className='form-global'>
         <div className='form'>
           <div className='dire'>
-            <label htmlFor='absence-select' className='tit-form'>
-              Type d’absence :
-            </label>
-            <select className='input-form' name='absences' id='absence-select'>
-              <option value='conge annuel'>Annuel</option>
-              <option value='Conge annuel'>Mensuel</option>
+            <label className='tit-form'>Type d’absence :</label>
+            <select
+              className='input-form'
+              value={absence}
+              onChange={(e) => setAbsence(e.target.value)}>
+              <option value='Annuel'>Annuel</option>
+              <option value='Mensuel'>Mensuel</option>
             </select>
           </div>
           <div className='dire'>
-            <label htmlFor='Date début' className='tit-form'>
-              Date début :
-            </label>
-            <input className='input-form' type='date' />
+            <label className='tit-form'>Date début :</label>
+            <input
+              className='input-form'
+              type='date'
+              value={dateDebut}
+              onChange={(e) => setDateDebut(e.target.value)}
+            />
           </div>
           <div className='dire'>
-            <label htmlFor='Date fin' className='tit-form'>
-              Date fin :
-            </label>
-            <input className='input-form' type='date' />
+            <label className='tit-form'>Date fin :</label>
+            <input
+              className='input-form'
+              type='date'
+              value={dateFin}
+              onChange={(e) => setDateFin(e.target.value)}
+            />
           </div>
         </div>
         <div className='form'>
           <div className='dire'>
-            <label htmlFor='absence-select' className='tit-form'>
-              Projet :
-            </label>
-            <select className='input-form' name='absences' id='absence-select'>
-              
-              <option value='conge annuel'>TA7ALIL</option>
-              <option value='Conge annuel'>RH</option>
-              <option value='Conge annuel'>Audit</option>
-            </select>
+            <InputProjet />
           </div>
           <div className='dire'>
-            <label htmlFor='Date début' className='tit-form'>
-              Votre situation sur le projet :
-            </label>
-            <select className='input-form' name='absences' id='absence-select'>
+            <label className='tit-form'>Votre situation sur le projet :</label>
+            <select className='input-form'>
               <option value='conge annuel'>Livraison_partielle</option>
               <option value='Conge annuel'>Livraison_complete</option>
             </select>
           </div>
           <div className='dire'>
-            <label htmlFor='Date fin' className='tit-form'>
-              Confirmation squad :
-            </label>
+            <label className='tit-form'>Confirmation squad :</label>
             <div className='squad'>
               <input className='squad-input' type='checkbox' />
               <label>Confirmation congé par squad</label>
