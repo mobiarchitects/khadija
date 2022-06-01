@@ -1,21 +1,9 @@
-import { useEffect} from 'react';
+import React from 'react';
 import '../styles/allServices.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchConges } from '../../redux/congesSlice';
 
-export default function ListServAdmin() {
-  const conges = useSelector(state => state.conges);
-  const dispatch = useDispatch();
-  useEffect(()=> {
-    dispatch(fetchConges())
-  }, [dispatch]);
-
-  useEffect(() => {
-    console.log( "conges :" ,conges);
-  },[conges])
-
+export default function ListServSocial() {
   return (
-    <div className='list-ser-admin'>
+     <div className='list-ser-admin'>
       <div className='list-title'>
           <p className='title'>Mes demandes</p>
           <a className='lien' href='/'>Voir tous</a>
