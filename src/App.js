@@ -8,6 +8,7 @@ import Administratif from './pages/administratif/Administratif';
 
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/Dashboard/Dashboard';
+import DemandeConge from './pages/administratif/DemandeConge';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
           <Route path='/Social' element={<Social />} />
           <Route path='/Administratif' element={<Administratif />} />
           <Route path='/Medical' element={<Medical />} />
-          <Route path='//Day-to-Day' element={<DayToDay />} />
+          <Route path='/Day-to-Day' element={<DayToDay />} />
+          <Route path='/demandeAbsence' element={<DemandeConge />} />
         </Routes>
       </div>
     </div>

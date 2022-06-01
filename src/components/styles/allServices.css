@@ -53,7 +53,7 @@
 }
 .list-ser-admin {
     display: flex;
-    width: 94.5%;
+    /* width: 94.5%; */
     flex-direction: column;
     border-radius: 4px;
     background-color: #FFFFFF;
@@ -103,4 +103,60 @@ td {
         font-weight: 500;
         letter-spacing: -0.07px;
         line-height: 18px;
+}
+.form-global {
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 6px 0 rgba(199,199,200,0.3);
+    margin-bottom: 27px;
+}
+.form {
+    display: flex;
+    flex-direction: row;
+   
+}
+.input-form {
+    box-sizing: border-box;
+    height: 46px;
+    width: 288px;
+    border: 1px solid #D3DADF;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding-left: 8px;
+}
+.tit-form {
+    
+   
+    color: #000000;
+    font-size: 14px;
+    letter-spacing: -0.06px;
+    line-height: 16px;
+    margin-bottom: 17px;
+    
+}
+.dire {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    margin-top: 27px;
+    margin-bottom: 20px;
+}
+.btn-conge {
+    height: 46px;
+  width: 194px;
+  border-radius: 4px;
+  background-color: #1F8EC6;
+  color: #FFFFFF;
+  margin-top: 56px;
+ margin-left: 30px;
+ border: none;
+ cursor: pointer;
+}
+.squad {
+    margin-top: 10px;
+}
+.squad-input {
+    margin-right: 9px;
 }

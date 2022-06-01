@@ -3,6 +3,7 @@
     flex-direction: column;
     background-color: #fff;
     border-radius: 4px;
+    margin-bottom: 70px;
 }
 .actualites {
     display: flex;
@@ -43,7 +44,7 @@
     height: 44px;
     width: 294px;
     color: #101F53;
-        font-family: "SF Pro Display";
+        /* font-family: "SF Pro Display"; */
         font-size: 15px;
         font-weight: 600;
         letter-spacing: 0;

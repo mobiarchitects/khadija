@@ -1,28 +1,31 @@
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 import '../styles/allServices.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchConges } from '../../redux/congesSlice';
+import moment from 'moment';
 
 export default function ListServAdmin() {
-  const conges = useSelector(state => state.conges);
+  const conges = useSelector((state) => state.conges.data);
   const dispatch = useDispatch();
-  useEffect(()=> {
-    dispatch(fetchConges())
+  useEffect(() => {
+    dispatch(fetchConges());
   }, [dispatch]);
 
   useEffect(() => {
-    console.log( "conges :" ,conges);
-  },[conges])
-
+    console.log('conges :', conges);
+  }, [conges]);
+  
   return (
     <div className='list-ser-admin'>
       <div className='list-title'>
-          <p className='title'>Mes demandes</p>
-          <a className='lien' href='/'>Voir tous</a>
+        <p className='title'>Mes demandes</p>
+        <a className='lien' href='/'>
+          Voir tous
+        </a>
       </div>
       <div className='box'></div>
-      <div >
-        <table style={{width:'100%'}}>
+      <div>
+        <table style={{ width: '100%' }}>
           <thead>
             <tr>
               <th>Date de demande</th>
@@ -31,14 +34,32 @@ export default function ListServAdmin() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>08/02/2019</td>
-              <td>Attestation de travail</td>
-              <td>en cours</td>
-            </tr>
+          {conges.map((item, index) => {
+              const styleStatus =
+                item.labelStatus === 'En_cours' ? (
+                  <td style={{ color: '#D75E11' }}>{item.labelStatus}</td>
+                ) : (
+                  <td style={{ color: '#11C948' }}>{item.labelStatus}</td>
+                );
+              return (
+                <tr key={index}>
+                  <td
+                    style={{
+                      paddingLeft: '26px',
+                      paddingTop: '21px',
+                      paddingBottom: '25px',
+                      fontSize: '14px',
+                    }}>
+                    {moment(item.startDate).format('DD/MM/YYYY')}
+                  </td>
+                  <td>{item.labelType}</td>
+                  {styleStatus}
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
     </div>
-  )
+  );
 }
