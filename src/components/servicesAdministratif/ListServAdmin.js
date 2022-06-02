@@ -14,7 +14,7 @@ export default function ListServAdmin() {
   useEffect(() => {
     console.log('conges :', conges);
   }, [conges]);
-  
+
   return (
     <div className='list-ser-admin'>
       <div className='list-title'>
@@ -34,7 +34,7 @@ export default function ListServAdmin() {
             </tr>
           </thead>
           <tbody>
-          {conges.map((item, index) => {
+            {conges.map((item, index) => {
               const styleStatus =
                 item.labelStatus === 'En_cours' ? (
                   <td style={{ color: '#D75E11' }}>{item.labelStatus}</td>

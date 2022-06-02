@@ -1,38 +1,32 @@
-import { createSlice , createAsyncThunk} from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-export const fetchConges  = createAsyncThunk(
-    'conges/fetchConges',
-    async() =>  {
-        const response = await axios.get("http://rh-api-dev-mobiarchitects.azurewebsites.net/api/leaves/getAllLeaves")
-        return response.data.data
-    }
-)
-
+export const fetchConges = createAsyncThunk('conges/fetchConges', async () => {
+  const response = await axios.get(
+    'http://rh-api-dev-mobiarchitects.azurewebsites.net/api/leaves/getAllLeaves',
+  );
+  return response.data.data;
+});
 
 export const congesSlice = createSlice({
-    name:"conges",
-    initialState:{
-        data:[],
-        status : null
+  name: 'conges',
+  initialState: {
+    data: [],
+    status: null,
+  },
+  reducers: {},
+  extraReducers: {
+    [fetchConges.fulfilled]: (state, action) => {
+      state.data = action.payload;
+      state.status = action.payload.succeeded;
     },
-    reducers:{
-
+    [fetchConges.pending]: (state) => {
+      state.status = 'loading';
     },
-    extraReducers:{
-        [fetchConges.fulfilled]: (state , action) => {
-            state.data = action.payload ;
-            state.status = "success";
-        }, 
-        [fetchConges.pending]: (state) => {
-            state.status = "loading";
+    [fetchConges.rejected]: (state) => {
+      state.status = 'failed';
+    },
+  },
+});
 
-        }, 
-        [fetchConges.rejected]: (state) => {
-            state.status = "failed";
-
-        },
-    }
-})
-
-export default congesSlice.reducer
+export default congesSlice.reducer;

@@ -5,6 +5,7 @@
     background-color: #101F53;
     /* height: 1000px; */
     text-align: center;
+    min-height: 1000px;
 }
 .logo-sidebar {
     display: inline-block;
