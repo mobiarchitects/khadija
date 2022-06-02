@@ -1,4 +1,5 @@
 import { Box, Button } from '@mui/material';
+import { display } from '@mui/system';
 import React from 'react';
 import ConfirmationParSquad from './ConfirmationParSquad';
 import DateDebutConge from './DateDebutConge';
@@ -11,7 +12,7 @@ export default function FormConge() {
   return (
     <Box
       bgcolor='white'
-      width='95%'
+      width='100%'
       paddingLeft='30px'
       paddingTop='30px'
       sx={{
@@ -20,6 +21,8 @@ export default function FormConge() {
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
+        paddingBottom: '30px',
+        paddingRight: '25px',
       }}>
       <TypeCongesSelect />
       <DateDebutConge />
@@ -27,7 +30,14 @@ export default function FormConge() {
       <TypeProjectsSelect />
       <TypeSituationsSelect />
       <ConfirmationParSquad />
-      {/* <Button variant="contained">Envoyer la demande</Button> */}
+      <div style={{ width: '100%', display: 'flex', justifyContent: 'end' }}>
+        <Button
+          variant='contained'
+          size='medium'
+          sx={{ marginTop: '20px', width: '288px' }}>
+          Envoyer la demande
+        </Button>
+      </div>
     </Box>
   );
 }

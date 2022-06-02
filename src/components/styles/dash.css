@@ -1,67 +1,77 @@
 .dash {
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 .dash-title {
-    height: 21px;
-    width: 91px;
+    /* height: 21px;
+    width: 91px; */
     color: #101F53;
    
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 0;
     line-height: 21px;
-    padding-left: 27px;
-    padding-top: 27px;
+    margin-bottom: 20px;
+    /* padding-left: 27px;
+    padding-top: 27px; */
 }
 .dash-item {
-    padding-left: 27px;
-    padding-top: 27px;
+    
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-right: 15px;
+    /* flex-wrap: wrap; */
+    
+   
 }
 .dash-group {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
-    height: 90px;
-  width: 270px;
+    /* justify-content: space-between; */
+    /* align-content: center; */
+    /* height: 90px;
+  width: 270px; */
   border-radius: 4px;
   background-color: #FFFFFF;
   box-shadow: 0 0 8px 0 rgba(0,0,0,0.03);
+  justify-content: space-around;
+  padding: 30px 0px;
 }
 .title-dash-item{
-    height: 36px;
-    width: 72px !important;
+    /* height: 36px;
+    width: 72px !important; */
     color: #101F53;
-   
     font-size: 14px;
     letter-spacing: -0.06px;
     line-height: 18px;
-    padding-left: 0px !important;
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-left: 0px !important; */
+    /* margin-top: 20px; */
 }
 .icon {
-  height: 30px;
-  padding: 13px !important;
+  /* height: 30px; */
+  /* padding: 13px !important; */
   border-radius: 6px;
   background-color: #EEF0FD;
-  margin-top: 18px;
-  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 13px;
 }
 .number {
-    height: 29px;
-    width: 16px;
+    /* height: 29px;
+    width: 16px; */
     color: #101F53;
     font-family: "SF Pro Display";
     font-size: 24px;
     font-weight: bold;
     letter-spacing: -0.11px;
     line-height: 29px;
-    margin-top: 28px;
-    margin-right: 20px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

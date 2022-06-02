@@ -11,12 +11,10 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import DemandeConge from './pages/administratif/DemandeConge';
 
 function App() {
-
   return (
-    
     <div className='App'>
       <SideBar />
-      <div>
+      <div style={{ flex: 10 }}>
         <NavBar />
         <Routes>
           <Route path='/Dashboard' element={<Dashboard />} />

@@ -1,10 +1,10 @@
 .navbar { 
     display: flex;
+    flex: 10 !important;
     flex-direction: row;  
     justify-content: space-between !important;
     background-color: #fff;
-    min-width: 1173px;
-    /* width: 1170px; */
+  
 
 }
 .input {

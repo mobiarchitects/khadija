@@ -8,17 +8,27 @@ export default function Dashboard() {
   return (
     <div>
       <Dash />
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <p
+        style={{
+          paddingLeft: '20px',
+          color: ' #101F53',
+          fontWeight: 'bold',
+          fontSize: '18px',
+        }}>
+        Services
+      </p>
+      <div
+        style={{ display: 'flex', flexDirection: 'row', padding: '0px 20px' }}>
         <AllServices />
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            marginTop: '66px',
-             marginRight:'6px'
           }}>
           <Profile />
-          <div style={{marginTop:'20px'}}><News /></div>
+          <div style={{ marginTop: '20px' }}>
+            <News />
+          </div>
         </div>
       </div>
     </div>

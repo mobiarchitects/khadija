@@ -8,8 +8,9 @@ export default function DemandeConge() {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        marginLeft: '27px',
+        // marginLeft: '27px',
         marginTop: '32px',
+        padding: '0px 30px',
       }}>
       <div
         style={{ display: 'flex', flexDirection: 'row', marginBottom: '25px' }}>
@@ -24,9 +25,7 @@ export default function DemandeConge() {
           Demandes d'absences
         </a>
       </div>
-      <div>
-        <FormConge />
-      </div>
+      <div>{/* <FormConge /> */}</div>
       <div></div>
     </div>
   );

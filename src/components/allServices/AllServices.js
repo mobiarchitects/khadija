@@ -127,7 +127,6 @@ const displayServices = () => {
 export default function AllServices() {
   return (
     <div className='allservices'>
-      <div className='title-services'>Services</div>
       <div className='ser-all'>{displayServices()}</div>
     </div>
   );

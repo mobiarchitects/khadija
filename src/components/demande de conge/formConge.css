@@ -8,10 +8,11 @@
 .select-conge {
   box-sizing: border-box;
   height: 46px;
-  width: 288px;
+  /* width: 288px; */
   border: 1px solid #D3DADF;
   border-radius: 5px;
   background-color: #FFFFFF;
+  padding: 10px;
   
 }
 .in-squad {

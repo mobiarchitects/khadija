@@ -1,7 +1,8 @@
 .sidebar {
-    min-width: 15%;
-    display: flex;
-    flex-direction: column;
+    /* min-width: 15%; */
+    /* display: flex;
+    flex-direction: column; */
+    flex: 2;
     background-color: #101F53;
     /* height: 1000px; */
     text-align: center;

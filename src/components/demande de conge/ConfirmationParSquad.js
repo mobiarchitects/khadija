@@ -7,8 +7,8 @@ export default function ConfirmationParSquad() {
     <>
       <Stack
         width='288px'
-        marginTop='30px'
-        paddingLeft='0px !important'
+        marginTop='40px'
+        // paddingLeft='0px !important'
         sx={{
           display: 'flex',
           flexDirection: 'row',

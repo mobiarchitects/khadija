@@ -33,7 +33,14 @@ const listDashboard = [
   },
 ];
 const displayDashboard = () => {
-  return listDashboard.map((item) => <DashItem key={item.id} item={item} />);
+  return listDashboard.map((item, index) => (
+    <DashItem
+      lengthArray={listDashboard.length}
+      idx={index}
+      key={item.id}
+      item={item}
+    />
+  ));
 };
 
 export default function Dash() {
