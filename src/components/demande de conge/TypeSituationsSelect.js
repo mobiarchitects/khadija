@@ -1,30 +1,28 @@
-import { Stack } from '@mui/material';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchSituationsProjects } from '../../redux/situationsProjectsSlice';
+import { Autocomplete, Stack, TextField } from '@mui/material';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 export default function TypeSituationsSelect() {
+  const [typeSituation, setTypeSituation] = useState(null);
   const situationsProjects = useSelector(
     (state) => state.situationsProjects.data,
   );
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchSituationsProjects());
-  }, [dispatch]);
-  useEffect(() => {
-    console.log('situations projects :', situationsProjects);
-  }, [situationsProjects]);
+  const listTypeSituation = situationsProjects.map((item) => {
+    return item.label;
+  });
 
   return (
-    <>
-      <Stack sx={{ display: 'flex', flexDirection: 'column' }}>
-        <label>Votre situation sur le projet</label>
-        <select>
-          {situationsProjects.map((item) => (
-            <option key={item.id}>{item.label}</option>
-          ))}
-        </select>
-      </Stack>
-    </>
+    <Stack sx={{ paddingLeft: '15px' }}>
+      <Autocomplete
+        disablePortal
+        id='Votre situation '
+        options={listTypeSituation}
+        renderInput={(params) => (
+          <TextField {...params} label='Votre situation sur le projet' />
+        )}
+        value={typeSituation}
+        onChange={(_event, newSituation) => setTypeSituation(newSituation)}
+      />
+    </Stack>
   );
 }

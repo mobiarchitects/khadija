@@ -1,28 +1,25 @@
-import { Stack } from '@mui/material';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProjects } from '../../redux/projectsSlice';
+import { Autocomplete, Stack, TextField } from '@mui/material';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-export default function TypeProjectsSelect() {
+export default function TypeProjectsSelect({ onChangeProject, value }) {
   const projects = useSelector((state) => state.projects.data);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchProjects());
-  }, [dispatch]);
-  useEffect(() => {
-    console.log('projects : ', projects);
-  }, [projects]);
+  const listTypeProjects = projects.map((item) => {
+    return item.name;
+  });
 
   return (
-    <>
-      <Stack  sx={{ display: 'flex', flexDirection: 'column' }}>
-        <label>Type de projet</label>
-        <select >
-          {projects.map((item) => (
-            <option key={item.id}>{item.name}</option>
-          ))}
-        </select>
-      </Stack>
-    </>
+    <Stack sx={{ paddingLeft: '15px' }}>
+      <Autocomplete
+        disablePortal
+        id='Projet'
+        options={listTypeProjects}
+        renderInput={(params) => <TextField {...params} label='Projet' />}
+        value={value}
+        onChange={(_event, newProject) => {
+          onChangeProject(newProject);
+        }}
+      />
+    </Stack>
   );
 }

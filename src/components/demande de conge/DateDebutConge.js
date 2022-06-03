@@ -1,13 +1,17 @@
-import { Stack } from '@mui/material';
+import { Stack, TextField } from '@mui/material';
 import React from 'react';
 
-export default function DateDebutConge() {
+export default function DateDebutConge({ onChangeDateDebut, value }) {
   return (
-    <>
-      <Stack  sx={{ display: 'flex', flexDirection: 'column' }}>
-        <label className='label-conge'>Date début</label>
-        <input className='select-conge' type='date' />
-      </Stack>
-    </>
+    <Stack sx={{ paddingLeft: '15px' }}>
+      <TextField
+        label='Date Début'
+        type='date'
+        onChange={(e) => {
+          onChangeDateDebut(e.target.value);
+        }}
+        value={value}
+      />
+    </Stack>
   );
 }

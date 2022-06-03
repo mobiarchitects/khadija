@@ -1,30 +1,24 @@
 import { Autocomplete, Stack, TextField } from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchTypeConges } from '../../redux/typeCongesSlice';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-export default function TypeCongesSelect() {
-  const [typeConge, setTypeConge] = useState('Annuel');
+export default function TypeCongesSelect({ onChangeInput,value }) {
   const typeConges = useSelector((state) => state.typeConges.data);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchTypeConges());
-  }, [dispatch]);
-  useEffect(() => {
-    console.log('type conges :', typeConges);
-  }, [typeConges]);
-
   const listTypeConges = typeConges.map((item) => {
     return item.label;
   });
-  console.log(listTypeConges);
+
   return (
-    <Stack>
+    <Stack sx={{ paddingLeft: '15px' }}>
       <Autocomplete
         disablePortal
         id='Type d’absence'
         options={listTypeConges}
+        value={value}
         renderInput={(params) => <TextField {...params} label='type conges' />}
+        onChange={(_event, newConge) => {
+          onChangeInput(newConge);
+        }}
       />
     </Stack>
   );
