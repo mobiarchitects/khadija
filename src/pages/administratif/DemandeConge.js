@@ -1,19 +1,17 @@
+import { Grid } from '@mui/material';
 import React from 'react';
 import FormConge from '../../components/demande de conge/FormConge';
-// import FormConge from '../../components/servicesAdministratif/FormConge';
 
 export default function DemandeConge() {
   return (
-    <div
-      style={{
+    <Grid
+      container
+      sx={{
+        padding: '20px',
         display: 'flex',
         flexDirection: 'column',
-        // marginLeft: '27px',
-        marginTop: '32px',
-        padding: '0px 30px',
       }}>
-      <div
-        style={{ display: 'flex', flexDirection: 'row', marginBottom: '25px' }}>
+      <Grid>
         <a
           style={{ textDecoration: 'none', color: '#81869A', fontSize: '14px' }}
           href='/Administratif'>
@@ -24,9 +22,18 @@ export default function DemandeConge() {
           href='/demandeAbsence'>
           Demandes d'absences
         </a>
-      </div>
-      <div>{/* <FormConge /> */}</div>
-      <div></div>
-    </div>
+      </Grid>
+      <Grid
+        sx={{
+          backgroundColor: '#fff',
+          display: 'flex',
+          justifyContent: 'center',
+          // alignItems: 'center',
+          borderRadius: '4px',
+        }}>
+        <FormConge />
+      </Grid>
+      <Grid></Grid>
+    </Grid>
   );
 }

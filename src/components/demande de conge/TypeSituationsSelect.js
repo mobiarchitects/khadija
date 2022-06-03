@@ -17,9 +17,9 @@ export default function TypeSituationsSelect() {
 
   return (
     <>
-      <Stack spacing={2} sx={{ display: 'flex', flexDirection: 'column' }}>
-        <label className='label-conge'>Votre situation sur le projet</label>
-        <select className='select-conge'>
+      <Stack sx={{ display: 'flex', flexDirection: 'column' }}>
+        <label>Votre situation sur le projet</label>
+        <select>
           {situationsProjects.map((item) => (
             <option key={item.id}>{item.label}</option>
           ))}

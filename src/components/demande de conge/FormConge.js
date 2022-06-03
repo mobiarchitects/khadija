@@ -1,5 +1,5 @@
-import { Box, Button } from '@mui/material';
-import { display } from '@mui/system';
+import styled from '@emotion/styled';
+import { Grid, Stack } from '@mui/material';
 import React from 'react';
 import ConfirmationParSquad from './ConfirmationParSquad';
 import DateDebutConge from './DateDebutConge';
@@ -9,35 +9,27 @@ import TypeProjectsSelect from './TypeProjectsSelect';
 import TypeSituationsSelect from './TypeSituationsSelect';
 
 export default function FormConge() {
+  const Item = styled(Stack)(() => ({
+    textAlign: 'center',
+  }));
   return (
-    <Box
-      bgcolor='white'
-      width='100%'
-      paddingLeft='30px'
-      paddingTop='30px'
-      sx={{
-        borderRadius: '4px',
-        display: 'flex',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        paddingBottom: '30px',
-        paddingRight: '25px',
-      }}>
-      <TypeCongesSelect />
-      <DateDebutConge />
-      <DateFinConge />
-      <TypeProjectsSelect />
-      <TypeSituationsSelect />
-      <ConfirmationParSquad />
-      <div style={{ width: '100%', display: 'flex', justifyContent: 'end' }}>
-        <Button
-          variant='contained'
-          size='medium'
-          sx={{ marginTop: '20px', width: '288px' }}>
-          Envoyer la demande
-        </Button>
-      </div>
-    </Box>
+    <Grid container spacing={3} width='100%'>
+      <Grid item xs={12} md={6}>
+        <Item width='60%' sx={{ display: 'flex', flexDirection: 'column' }}>
+          <h3>Informations congé</h3>
+          <DateDebutConge />
+          <DateFinConge />
+          <TypeCongesSelect />
+        </Item>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <Item width='60%' sx={{ display: 'flex', flexDirection: 'column' }}>
+          <h3>Informations Interne</h3>
+          <TypeProjectsSelect />
+          <TypeSituationsSelect />
+          <ConfirmationParSquad />
+        </Item>
+      </Grid>
+    </Grid>
   );
 }

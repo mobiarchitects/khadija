@@ -5,12 +5,18 @@ export default function Profile() {
   return (
     <div className='profile'>
       <div className='user'>
-        <p className='user-name'>youssef elfaour</p>
-        <p className='user-desc'>Votre liste des rendez-vous pour aujourd’hui est vide</p>
+        <p className='user-name'>Elfaour Youssef</p>
+        <p className='user-desc'>
+          Votre liste des rendez-vous pour aujourd’hui est vide
+        </p>
         <button className='btn'>Programmer une réunion</button>
       </div>
       <div>
-        <img className='img' src='/assets/Mar-Business_9.svg' alt='mar-business-9' />
+        <img
+          
+          src='/assets/Mar-Business_9.svg'
+          alt='mar-business-9'
+        />
       </div>
     </div>
   );

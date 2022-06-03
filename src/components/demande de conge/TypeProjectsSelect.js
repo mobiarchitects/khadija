@@ -15,9 +15,9 @@ export default function TypeProjectsSelect() {
 
   return (
     <>
-      <Stack spacing={2} sx={{ display: 'flex', flexDirection: 'column' }}>
-        <label className='label-conge'>Type de projet</label>
-        <select className='select-conge'>
+      <Stack  sx={{ display: 'flex', flexDirection: 'column' }}>
+        <label>Type de projet</label>
+        <select >
           {projects.map((item) => (
             <option key={item.id}>{item.name}</option>
           ))}
