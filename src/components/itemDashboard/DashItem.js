@@ -10,7 +10,7 @@ export default function DashItem({ item, lengthArray, idx }) {
       <Box
         sx={{
           width: { xs: '50%', md: '25%' },
-          marginRight: lengthArray == idx + 1 ? '0px' : '15px',
+          marginRight: lengthArray === idx + 1 ? '0px' : '15px',
         }}>
         <div className='dash-group'>
           <div className='icon'>{item.icon}</div>

@@ -1,9 +1,9 @@
 import { Autocomplete, Stack, TextField } from '@mui/material';
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
-export default function TypeSituationsSelect() {
-  const [typeSituation, setTypeSituation] = useState(null);
+export default function TypeSituationsSelect({onChangeSituation , value}) {
+  
   const situationsProjects = useSelector(
     (state) => state.situationsProjects.data,
   );
@@ -20,8 +20,8 @@ export default function TypeSituationsSelect() {
         renderInput={(params) => (
           <TextField {...params} label='Votre situation sur le projet' />
         )}
-        value={typeSituation}
-        onChange={(_event, newSituation) => setTypeSituation(newSituation)}
+        value={value}
+        onChange={(_event, newSituation) => onChangeSituation(newSituation)}
       />
     </Stack>
   );

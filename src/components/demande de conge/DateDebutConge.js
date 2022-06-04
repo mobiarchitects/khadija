@@ -7,10 +7,11 @@ export default function DateDebutConge({ onChangeDateDebut, value }) {
       <TextField
         label='Date Début'
         type='date'
+        value={value}
         onChange={(e) => {
           onChangeDateDebut(e.target.value);
         }}
-        value={value}
+        
       />
     </Stack>
   );

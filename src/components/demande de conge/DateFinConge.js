@@ -8,7 +8,7 @@ export default function DateFinConge({ onChangeDateFin, value }) {
         label='Date Fin'
         type='date'
         value={value}
-        onChange={(_event, newDateF) => onChangeDateFin(newDateF)}
+        onChange={(event) => onChangeDateFin(event.target.value)}
       />
     </Stack>
   );

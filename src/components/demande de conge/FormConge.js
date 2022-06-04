@@ -10,15 +10,24 @@ import TypeSituationsSelect from './TypeSituationsSelect';
 import moment from 'moment';
 
 export default function FormConge() {
+  // const [dataConge , setDataConge] = useState({
+  //   startDate:new Date().toISOString().slice(0,10),
+  //   endDate:false,
+  //   labelType:null ,
+  // })
   const [typeConge, setTypeConge] = useState(null);
   const [typeProject, setTypeProject] = useState(null);
-  const [dateDebut, setDateDebut] = useState('22/02/2022');
-  const [dateFin, setDateFin] = useState(moment().format('DD/MM/YYYY'));
+  const [dateDebut, setDateDebut] = useState(new Date().toISOString().slice(0,10));
+  const [dateFin, setDateFin] = useState(new Date().toISOString().slice(0,10));
+  const [typeSituation, setTypeSituation] = useState(null);
+  const [isConfirmed, setIsConfirmed] = useState(false);
+  
+  console.log(typeConge,typeProject,typeSituation,isConfirmed,dateDebut,dateFin);
   const Item = styled(Stack)(() => ({
     textAlign: 'center',
   }));
   const handleData = () => {
-    console.log(' data :', typeConge, typeProject);
+    console.log(' data :', onChangeDateDebut);
   };
   const onChangeProject = (project) => {
     console.log('myTypeProject :', project);
@@ -36,7 +45,13 @@ export default function FormConge() {
     console.log(dateF);
     setDateFin(dateF);
   };
-
+  const onChangeSituation = (typeS) => {
+    console.log(typeS);
+    setTypeSituation(typeS);
+  }
+  const onClickConfirmation = (isConf) => {
+    setIsConfirmed(isConf);
+  }
   return (
     <Grid container spacing={3} width='100%'>
       <Grid item xs={12} md={6}>
@@ -63,8 +78,8 @@ export default function FormConge() {
             onChangeProject={onChangeProject}
             value={typeProject}
           />
-          <TypeSituationsSelect />
-          <ConfirmationParSquad />
+          <TypeSituationsSelect onChangeSituation={onChangeSituation} value={typeSituation} />
+          <ConfirmationParSquad onClickConfirmation={onClickConfirmation} value={isConfirmed} />
         </Item>
       </Grid>
       <Grid item xs={4} md={3}>
