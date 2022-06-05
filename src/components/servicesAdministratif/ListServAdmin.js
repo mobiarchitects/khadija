@@ -1,23 +1,14 @@
-import { useEffect } from 'react';
 import '../styles/allServices.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchConges } from '../../redux/congesSlice';
+import { useSelector } from 'react-redux';
 import moment from 'moment';
 import { Box } from '@mui/material';
 
 export default function ListServAdmin() {
   const conges = useSelector((state) => state.conges.data);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchConges());
-  }, [dispatch]);
-
-  // useEffect(() => {
-  //   console.log('conges :', conges);
-  // }, [conges]);
+ 
 
   return (
-    <Box sx={{ margin: '0px 75px 0px 0px' }}>
+    <Box >
       <div className='list-ser-admin'>
         <div className='list-title'>
           <p className='title-admin'>Mes demandes</p>

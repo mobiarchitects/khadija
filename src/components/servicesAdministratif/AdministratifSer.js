@@ -61,8 +61,8 @@ const listServicesAdmin = [
 
 export default function AdministratifSer() {
   return (
+ 
    <div className='allservices'>
-      {/* <div className='title-services'>Services</div> */}
       <div className='ser-all'>{displayServicesAdmin()}</div>
     </div>
   )

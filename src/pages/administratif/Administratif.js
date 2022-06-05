@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AdministratifSer from '../../components/servicesAdministratif/AdministratifSer';
 import Profile from '../../components/profile/Profile';
 import News from '../../components/actualites/News';
 import ListServAdmin from '../../components/servicesAdministratif/ListServAdmin';
 import { Box } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { fetchConges } from '../../redux/congesSlice';
 
 export default function Administratif() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchConges());
+  },[dispatch])
   return (
     <Box sx={{ padding: '20px' }}>
       <p style={{ color: ' #101F53', fontWeight: 'bold', fontSize: '18px' }}>

@@ -37,7 +37,6 @@ const displayServicesSocial = () => {
 export default function SocialSer() {
   return (
      <div className='allservices'>
-      <div className='title-services'>Services</div>
       <div className='ser-all'>{displayServicesSocial()}</div>
     </div>
   )

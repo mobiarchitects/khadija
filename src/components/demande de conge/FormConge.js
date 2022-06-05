@@ -60,7 +60,7 @@ export default function FormConge() {
           spacing={3}
           width='60%'
           sx={{ display: 'flex', flexDirection: 'column' }}>
-          <h3>Informations congé</h3>
+          <h3 style={{paddingTop:'5px'}}>Informations congé</h3>
           <DateDebutConge
             onChangeDateDebut={onChangeDateDebut}
             value={dateDebut}
@@ -74,7 +74,7 @@ export default function FormConge() {
           spacing={3}
           width='60%'
           sx={{ display: 'flex', flexDirection: 'column' }}>
-          <h3>Informations Interne</h3>
+          <h3 style={{paddingTop:'5px'}}>Informations Interne</h3>
           <TypeProjectsSelect
             onChangeProject={onChangeProject}
             value={typeProject}

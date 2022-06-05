@@ -10,11 +10,12 @@ import { fetchTypeConges } from '../../redux/typeCongesSlice';
 export default function DemandeConge() {
   const dispatch = useDispatch();
   useEffect(() => {
+    
     dispatch(fetchProjects());
     dispatch(fetchSituationsProjects());
     dispatch(fetchTypeConges());
   }, [dispatch]);
-
+ 
   return (
     <Grid
       container
