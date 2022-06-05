@@ -12,9 +12,9 @@ export default function ListServAdmin() {
     dispatch(fetchConges());
   }, [dispatch]);
 
-  useEffect(() => {
-    console.log('conges :', conges);
-  }, [conges]);
+  // useEffect(() => {
+  //   console.log('conges :', conges);
+  // }, [conges]);
 
   return (
     <Box sx={{ margin: '0px 75px 0px 0px' }}>
