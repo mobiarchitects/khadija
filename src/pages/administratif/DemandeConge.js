@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import FormConge from '../../components/demande de conge/FormConge';
 import TableConge from '../../components/demande de conge/TableConge';
+import { fetchConges } from '../../redux/congesSlice';
 import { fetchProjects } from '../../redux/projectsSlice';
 import { fetchSituationsProjects } from '../../redux/situationsProjectsSlice';
 import { fetchTypeConges } from '../../redux/typeCongesSlice';
@@ -10,12 +11,12 @@ import { fetchTypeConges } from '../../redux/typeCongesSlice';
 export default function DemandeConge() {
   const dispatch = useDispatch();
   useEffect(() => {
-    
+    dispatch(fetchConges());
     dispatch(fetchProjects());
     dispatch(fetchSituationsProjects());
     dispatch(fetchTypeConges());
   }, [dispatch]);
- 
+
   return (
     <Grid
       container
@@ -46,7 +47,19 @@ export default function DemandeConge() {
         }}>
         <FormConge />
       </Grid>
-      <Grid><TableConge/></Grid>
+      <Grid
+        sx={{
+          paddingTop: '30px',
+          paddingBottom: '33px',
+          color: '#101F53',
+          fontSize: '18px',
+          fontWeight: 'bold',
+        }}>
+        Mes demandes
+      </Grid>
+      <Grid>
+        <TableConge />
+      </Grid>
     </Grid>
   );
 }
