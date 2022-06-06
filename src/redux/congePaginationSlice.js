@@ -8,7 +8,7 @@ export const fetchCongePaginations = createAsyncThunk(
     const response = await axios.get(
       'http://rh-api-dev-mobiarchitects.azurewebsites.net/api/leaves/GetAllLeaves?pageNumber=' +
         numPage +
-        '&pageSize=1',
+        '&pageSize=3',
     );
     return response.data.data;
   },

@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import actualitesSlice from './actualitesSlice';
 import congePaginationSlice from './congePaginationSlice';
 import congesSlice from './congesSlice';
 import projectsSlice from './projectsSlice';
@@ -12,5 +13,6 @@ export const store = configureStore({
     projects: projectsSlice,
     situationsProjects: situationsProjectsSlice,
     congePations: congePaginationSlice,
+    actualites: actualitesSlice,
   },
 });
