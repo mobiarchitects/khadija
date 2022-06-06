@@ -14,18 +14,25 @@ import { useSelector } from 'react-redux';
 import './tableConge.css';
 import moment from 'moment';
 import ReactPaginate from 'react-paginate';
+// import { fetchCongePaginations } from '../../redux/congePaginationSlice';
 
-export default function TableConge() {
+export default function TableConge({ handlePaginationClick }) {
+  const congesPaginations = useSelector((state) => state.congePations.data);
+
+  console.log(congesPaginations);
   function getDifferenceInDays(date1, date2) {
     const diffInMs = Math.abs(date1 - date2);
     return diffInMs / (1000 * 60 * 60 * 24);
   }
-  const handlePageClick = (data) => {
-    console.log(data.selected);
-  };
-  const conges = useSelector((state) => state.conges.data);
+  // const handlePageClick = async (data) => {
+  //   let currentPage = data.selected + 1;
+  //   console.log(currentPage);
+  //   fetchCongePaginations();
+  // };
 
-  const rowConges = conges.map((conge) => {
+  // const conges = useSelector((state) => state.conges.data);
+
+  const rowConges = congesPaginations.map((conge) => {
     const dateDebut = moment(conge.startDate).format('DD/MM/YYYY');
     const dateFin = moment(conge.endDate).format('DD/MM/YYYY');
     const dateD = new Date(conge.startDate);
@@ -81,7 +88,9 @@ export default function TableConge() {
   return (
     <Box>
       <Stack>
-        <TableContainer component={Paper}>
+        <TableContainer
+          sx={{ boxShadow: 'none', marginBottom: '10px' }}
+          component={Paper}>
           <Table>
             <TableHead>
               <TableRow>
@@ -106,15 +115,15 @@ export default function TableConge() {
           </Table>
         </TableContainer>
       </Stack>
-      <Stack>
+      <Stack spacing={2}>
         <ReactPaginate
           previousLabel={' < '}
           breakLabel={'...'}
-          pageCount={25}
+          pageCount={10}
           nextLabel={' > '}
           marginPagesDisplayed={2}
-          onPageChange={handlePageClick}
-          containerClassName={'pagination'}
+          onPageChange={(data) => handlePaginationClick(data)}
+          containerClassName={'pagination justify-content-center'}
           pageClassName={'page-item'}
           pageLinkClassName={'page-link'}
           previousClassName={'page-item'}
@@ -122,6 +131,7 @@ export default function TableConge() {
           nextClassName={'page-item'}
           nextLinkClassName={'page-link'}
           breakLinkClassName={'page-link'}
+          activeClassName={'active'}
         />
       </Stack>
     </Box>

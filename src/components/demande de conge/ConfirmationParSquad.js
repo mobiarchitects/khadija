@@ -1,10 +1,17 @@
 import { Stack } from '@mui/material';
+import './tableConge.css';
 
 export default function ConfirmationParSquad({ onClickConfirmation, value }) {
   return (
-    <Stack sx={{ display: 'flex', flexDirection: 'row', paddingLeft: '15px' }}>
+    <Stack
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        paddingLeft: '15px',
+        marginTop: '30px',
+      }}>
       <input
-        style={{ marginTop: '6px' }}
+        className='checkStyle'
         type='checkbox'
         value={value}
         onClick={(e) => onClickConfirmation(e.target.checked)}

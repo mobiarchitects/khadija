@@ -17,12 +17,21 @@ export default function FormConge() {
   // })
   const [typeConge, setTypeConge] = useState(null);
   const [typeProject, setTypeProject] = useState(null);
-  const [dateDebut, setDateDebut] = useState(new Date().toISOString().slice(0,10));
-  const [dateFin, setDateFin] = useState(new Date().toISOString().slice(0,10));
+  const [dateDebut, setDateDebut] = useState(
+    new Date().toISOString().slice(0, 10),
+  );
+  const [dateFin, setDateFin] = useState(new Date().toISOString().slice(0, 10));
   const [typeSituation, setTypeSituation] = useState(null);
   const [isConfirmed, setIsConfirmed] = useState(false);
-  
-  console.log(typeConge,typeProject,typeSituation,isConfirmed,dateDebut,dateFin);
+
+  console.log(
+    typeConge,
+    typeProject,
+    typeSituation,
+    isConfirmed,
+    dateDebut,
+    dateFin,
+  );
   const Item = styled(Stack)(() => ({
     textAlign: 'center',
   }));
@@ -48,19 +57,18 @@ export default function FormConge() {
   const onChangeSituation = (typeS) => {
     console.log(typeS);
     setTypeSituation(typeS);
-  }
+  };
   const onClickConfirmation = (isConf) => {
     setIsConfirmed(isConf);
-  }
+  };
   return (
     <Grid container spacing={3} width='100%'>
       <Grid item xs={12} md={6}>
-        
         <Item
           spacing={3}
           width='60%'
           sx={{ display: 'flex', flexDirection: 'column' }}>
-          <h3 style={{paddingTop:'5px'}}>Informations congé</h3>
+          <h5 style={{ paddingTop: '25px' }}>Informations congé</h5>
           <DateDebutConge
             onChangeDateDebut={onChangeDateDebut}
             value={dateDebut}
@@ -74,25 +82,35 @@ export default function FormConge() {
           spacing={3}
           width='60%'
           sx={{ display: 'flex', flexDirection: 'column' }}>
-          <h3 style={{paddingTop:'5px'}}>Informations Interne</h3>
+          <h5 style={{ paddingTop: '25px' }}>Informations Interne</h5>
           <TypeProjectsSelect
             onChangeProject={onChangeProject}
             value={typeProject}
           />
-          <TypeSituationsSelect onChangeSituation={onChangeSituation} value={typeSituation} />
-          <ConfirmationParSquad onClickConfirmation={onClickConfirmation} value={isConfirmed} />
+          <TypeSituationsSelect
+            onChangeSituation={onChangeSituation}
+            value={typeSituation}
+          />
+          <ConfirmationParSquad
+            onClickConfirmation={onClickConfirmation}
+            value={isConfirmed}
+          />
         </Item>
       </Grid>
       <Grid item xs={4} md={3}>
         <Item sx={{ paddingLeft: '15px' }}>
           <Button
-            sx={{ padding: '10px' }}
+            sx={{
+              
+              textTransform: 'capitalize',
+              width: 'fit-content',
+              padding:'10px 30px',
+            }}
             variant='contained'
             onSubmit={handleData}>
-            Envoyer la demande
+            Envoyer
           </Button>
         </Item>
-        
       </Grid>
     </Grid>
   );

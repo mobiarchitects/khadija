@@ -7,3 +7,9 @@
     line-height: 16px;
     text-align: center;
 }
+.checkStyle {
+    width: '17px !important';
+    height: '17px !important';
+    margin-top: 4px;
+    margin-right: 6px;
+}
