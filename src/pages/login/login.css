@@ -1,0 +1,54 @@
+.login{
+    width: 100%; 
+display: flex;
+flex-direction: row;
+
+
+}
+.img-login{
+display: flex;
+flex: 4;
+flex-flow: column nowrap;
+background-repeat: no-repeat;
+background-size: cover; 
+
+padding-left: 40px;
+
+}
+.form-login{
+ display: flex;
+ flex: 8;
+}
+.para {
+    color: #FFFFFF;
+    min-width: 379px;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    line-height: 36px;
+    padding-top: 112px;
+    padding-bottom: 20px;
+}
+.para span {
+    color: #1E87C4;
+}
+.cola {
+    
+    padding-bottom:20px;
+    max-width: 18%;
+    color: #1E87C4;
+    font-size: 12px;
+    letter-spacing: -0.2px;
+    line-height: 14px;
+    
+    
+}
+.text {
+    color: #FFFFFF;
+  font-size: 13px;
+  letter-spacing: -0.22px;
+  line-height: 22px;
+}
+.form-login{
+    background-color: #FFFFFF;
+}

@@ -1,0 +1,78 @@
+.p-title span {
+  
+    color: #61656C;
+    font-size: 13px;
+    
+   
+    
+}
+.p-title{
+    display: flex;
+    flex-direction: row;
+    padding-top: 60px;
+    justify-content: flex-end;
+   
+   
+}
+.title {
+    color: #101F53 !important;
+    
+}
+.tit-auth {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 50px;
+}
+.auth-title {
+    color: #101F53;
+    padding-bottom: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.33px;
+    line-height: 24px;
+    padding-top: 83px;
+}
+.login-title {
+    color: #61656C;
+
+    font-size: 13px;
+    letter-spacing: -0.22px;
+    line-height: 15px;
+}
+.form-login {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding-bottom: 320px;
+    
+}
+.email{
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #E9E9E9;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+}
+.password {
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #E9E9E9;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+}
+button{
+    width: 50%;
+    border-radius: 4px;
+  background-color: #101F53;
+  color: #FFFFFF;
+  padding-left: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: none;
+}
