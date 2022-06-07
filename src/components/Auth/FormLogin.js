@@ -1,8 +1,19 @@
 import { Box } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import './auth.css';
 
 export default function FormLogin() {
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(false);
+  const handleData = (e) => {
+    e.preventDefault();
+    if (login.length === 0 || password.length === 0) {
+      setError(true);
+    }
+    console.log({ login, password });
+  };
+
   return (
     <Box
       width='100%'
@@ -18,14 +29,32 @@ export default function FormLogin() {
         </div>
       </div>
       <div>
-        <form className='form-login'>
-          <input className='email' type='email' placeholder='Login' />
+        <form className='form-login' onSubmit={handleData}>
+          <input
+            className='email'
+            type='email'
+            placeholder='Login'
+            value={login}
+            onChange={(e) => setLogin(e.target.value)}
+          />
+          {error && login.length <= 0 ? (
+            <label>Login can't be Empty</label>
+          ) : (
+            ''
+          )}
           <input
             className='password'
             type='password'
             placeholder='Mot de passe'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <button>Se connecter</button>
+          {error && password.length <= 0 ? (
+            <label>Password can't be Empty</label>
+          ) : (
+            ''
+          )}
+          <button type='submit'>Se connecter</button>
         </form>
       </div>
     </Box>

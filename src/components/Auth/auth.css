@@ -55,6 +55,7 @@
     border-radius: 4px;
     background-color: #FFFFFF;
     margin-bottom: 20px;
+    position: relative;
 }
 .password {
     box-sizing: border-box;
@@ -64,15 +65,23 @@
     border: 1px solid #E9E9E9;
     border-radius: 4px;
     background-color: #FFFFFF;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    position: relative;
 }
 button{
     width: 50%;
     border-radius: 4px;
+    margin-top: 10px;
   background-color: #101F53;
   color: #FFFFFF;
   padding-left: 18px;
     padding-top: 8px;
     padding-bottom: 8px;
     border: none;
+}
+label{
+    position: relative;
+    color: red;
+    bottom: 15px;
+    
 }

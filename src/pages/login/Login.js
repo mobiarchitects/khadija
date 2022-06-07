@@ -11,6 +11,7 @@ export default function Login() {
         <img
           style={{ width: '40%', paddingTop: '57px' }}
           src='/assets/logoMobi.svg'
+          alt='mo'
         />
         <p className='para'>
           Comment booster l’expérience <span>collaborateur</span> dans votre

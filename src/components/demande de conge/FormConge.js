@@ -7,14 +7,10 @@ import DateFinConge from './DateFinConge';
 import TypeCongesSelect from './TypeCongesSelect';
 import TypeProjectsSelect from './TypeProjectsSelect';
 import TypeSituationsSelect from './TypeSituationsSelect';
-// import moment from 'moment';
+
 
 export default function FormConge() {
-  // const [dataConge , setDataConge] = useState({
-  //   startDate:new Date().toISOString().slice(0,10),
-  //   endDate:false,
-  //   labelType:null ,
-  // })
+
   const [typeConge, setTypeConge] = useState(null);
   const [typeProject, setTypeProject] = useState(null);
   const [dateDebut, setDateDebut] = useState(
