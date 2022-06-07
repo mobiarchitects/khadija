@@ -1,27 +1,41 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+export const postConnection = createAsyncThunk(
+  'post/postConnection',
+  async (valObject) => {
+    console.log(valObject);
+    const response = await axios.post(
+      'http://rh-api-dev-mobiarchitects.azurewebsites.net/api/Account/Authenticate',
+      valObject,
+    );
+    return console.log(response.data);
+  },
+);
 
 const authSlice = createSlice({
-    name:'auth',
-    initialState:{
-        user:null,
-        token:null,
+  name: 'auth',
+  initialState: {
+    isLogged: false,
+  },
+  reducers: {},
+  extraReducers: {
+    [postConnection.fulfilled]: (state, action) => {
+      state.data = action.payload;
+      state.isLogged = action.payload.succeeded;
     },
-    reducers:{
-        setCredentials:(state , action) => {
-            const {user , accesToken} = action.payload
-            state.user = user
-            state.token = accesToken
-        },
-        logOut:(state , action) => {
-            state.user = null
-            state.token = null
-        },
+    [postConnection.pending]: (state) => {
+      state.isLogged = 'loading';
     },
-})
+    [postConnection.rejected]: (state) => {
+      state.isLogged = 'failed';
+    },
+  },
+});
 
-export const {setCredentials , logOut} = authSlice.actions
+export const { setCredentials, logOut } = authSlice.actions;
 
-export default authSlice.reducer
+export default authSlice.reducer;
 
-export const selectCurrentUser = (state) => state.auth.user
-export const selectCurrentToken = (state) => state.auth.token
+export const selectCurrentUser = (state) => state.auth.user;
+export const selectCurrentToken = (state) => state.auth.token;

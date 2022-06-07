@@ -11,11 +11,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import DemandeConge from './pages/administratif/DemandeConge';
 import Login from './pages/login/Login';
 
-
-
 function App() {
-
-
   return (
     <div className='App'>
       <Login />
