@@ -22,4 +22,10 @@ const loginSlice = createSlice({
       state.error = payload;
     },
   },
+  
 });
+
+const { reducer, actions } = loginSlice;
+
+export const { loginFail, loginPending, loginSuccess } = actions;
+export default reducer;

@@ -1,22 +1,34 @@
 import { Box } from '@mui/material';
 import React, { useState } from 'react';
-
 import './login.css';
+import { loginFail, loginPending, loginSuccess } from '../../redux/loginSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { Spinner } from 'react-bootstrap';
+
+import httpComm from '../../api/httpComm';
+import { userLogin } from '../../api/userApi';
 
 export default function Login() {
-  const [login, setLogin] = useState('');
+  const dispatch = useDispatch();
+  const { isLoading, isAuth, error } = useSelector((state) => state.login);
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(false);
 
-  const handleData = (e) => {
+  const handleData = async (e) => {
     e.preventDefault();
-    if (login.length === 0 || password.length === 0) {
-      setError(true);
+    if (!email || !password) {
+      return alert('Fill up all the form');
     }
-    if (login && password) {
-      console.log(login, password);
-      setLogin('');
-      setPassword('');
+    dispatch(loginPending());
+    try {
+      const isAuth = await userLogin({ userName: email, password: password });
+      console.log(isAuth);
+      if (isAuth.succeeded === false) {
+        return dispatch(loginFail(isAuth.message));
+      }
+      dispatch(loginSuccess());
+    } catch (error) {
+      dispatch(loginFail(error.message));
     }
   };
   return (
@@ -65,15 +77,11 @@ export default function Login() {
                 type='email'
                 placeholder='Login'
                 autoComplete='off'
-                onChange={(e) => setLogin(e.target.value)}
-                value={login}
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 required
               />
-              {error && login.length <= 0 ? (
-                <label>Login can't be Empty</label>
-              ) : (
-                ''
-              )}
+
               <input
                 className='password'
                 type='password'
@@ -82,12 +90,11 @@ export default function Login() {
                 value={password}
                 required
               />
-              {error && password.length <= 0 ? (
-                <label>Password can't be Empty</label>
-              ) : (
-                ''
-              )}
-              <button type='submit'>Se connecter</button>
+
+              <span>
+                <button type='submit'>Se connecter</button>
+                {isLoading && <Spinner variant='primary' animation='border' />}
+              </span>
             </form>
           </div>
         </Box>
