@@ -20,3 +20,15 @@ export const userLogin = (frmData) => {
     }
   });
 };
+export const fetchUser = () => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const res = await httpComm.get('/api/Profils/GetProfils');
+      console.log(res);
+      resolve(res.data);
+    } catch (error) {
+      console.log(error.message);
+      reject(error);
+    }
+  });
+};

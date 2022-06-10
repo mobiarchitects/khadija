@@ -1,18 +1,20 @@
-import { Box } from '@mui/material';
+import {  Box } from '@mui/material';
 import React, { useState } from 'react';
 import './login.css';
 import { loginFail, loginPending, loginSuccess } from '../../redux/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'react-bootstrap';
 
-import httpComm from '../../api/httpComm';
+
 import { userLogin } from '../../api/userApi';
+import { getUserProfile } from '../../api/userAction';
 
 export default function Login() {
   const dispatch = useDispatch();
-  const { isLoading, isAuth, error } = useSelector((state) => state.login);
+  const { isLoading} = useSelector((state) => state.login);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+ 
 
   const handleData = async (e) => {
     e.preventDefault();
@@ -27,6 +29,7 @@ export default function Login() {
         return dispatch(loginFail(isAuth.message));
       }
       dispatch(loginSuccess());
+      dispatch(getUserProfile())
     } catch (error) {
       dispatch(loginFail(error.message));
     }
@@ -72,6 +75,14 @@ export default function Login() {
           </div>
           <div>
             <form className='form-login' onSubmit={handleData}>
+              {/* {!isAuth && (
+                <Alert
+                  variant='filled'
+                  sx={{ padding: '5px', marginBottom: '5px' }}
+                  severity='error'>
+                  {error}
+                </Alert>
+              )} */}
               <input
                 className='email'
                 type='email'
