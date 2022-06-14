@@ -9,14 +9,10 @@ export default function Profile() {
         <p className='user-desc'>
           Votre liste des rendez-vous pour aujourd’hui est vide
         </p>
-        <button className='btn'>Programmer une réunion</button>
+        <button className='button-btn'>Programmer une réunion</button>
       </div>
       <div>
-        <img
-          
-          src='/assets/Mar-Business_9.svg'
-          alt='mar-business-9'
-        />
+        <img src='/assets/Mar-Business_9.svg' alt='mar-business-9' />
       </div>
     </div>
   );

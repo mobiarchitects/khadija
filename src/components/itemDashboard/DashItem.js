@@ -3,8 +3,8 @@ import React from 'react';
 import '../styles/dash.css';
 
 export default function DashItem({ item, lengthArray, idx }) {
-  console.log(lengthArray);
-  console.log(idx);
+  // console.log(lengthArray);
+  // console.log(idx);
   return (
     <>
       <Box

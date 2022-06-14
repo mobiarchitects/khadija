@@ -57,7 +57,7 @@ export default function News() {
   const displayActualites = () => {
     return actualites.map((item) => <NewsItem key={item.id} item={item} />);
   };
-  console.log('ac:', actualites);
+  // console.log('ac:', actualites);
   return (
     <div className='news'>
       <div className='actualites'>

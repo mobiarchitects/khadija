@@ -1,37 +1,32 @@
-import {  Box } from '@mui/material';
+import { Alert, Box } from '@mui/material';
 import React, { useState } from 'react';
 import './login.css';
 import { loginFail, loginPending, loginSuccess } from '../../redux/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'react-bootstrap';
 
-
 import { userLogin } from '../../api/userApi';
-import { getUserProfile } from '../../api/userAction';
 
 export default function Login() {
   const dispatch = useDispatch();
-  const { isLoading} = useSelector((state) => state.login);
+  const login = useSelector((state) => state.login);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
- 
 
   const handleData = async (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      return alert('Fill up all the form');
-    }
+
+    let action;
+    action = userLogin({
+      userName: email,
+      password: password,
+    });
     dispatch(loginPending());
     try {
-      const isAuth = await userLogin({ userName: email, password: password });
-      console.log(isAuth);
-      if (isAuth.succeeded === false) {
-        return dispatch(loginFail(isAuth.message));
-      }
-      dispatch(loginSuccess());
-      dispatch(getUserProfile())
-    } catch (error) {
-      dispatch(loginFail(error.message));
+      await dispatch(action).then(() => {});
+    } catch (err) {
+      dispatch(loginFail());
+      console.log('errrrrr', err.error);
     }
   };
   return (
@@ -75,14 +70,14 @@ export default function Login() {
           </div>
           <div>
             <form className='form-login' onSubmit={handleData}>
-              {/* {!isAuth && (
+              {!login.isAuth && (
                 <Alert
                   variant='filled'
                   sx={{ padding: '5px', marginBottom: '5px' }}
                   severity='error'>
-                  {error}
+                  {login.error}
                 </Alert>
-              )} */}
+              )}
               <input
                 className='email'
                 type='email'
@@ -103,8 +98,12 @@ export default function Login() {
               />
 
               <span>
-                <button type='submit'>Se connecter</button>
-                {isLoading && <Spinner variant='primary' animation='border' />}
+                <button className='button1' type='submit'>
+                  Se connecter
+                </button>
+                {login.isLoading && (
+                  <Spinner variant='primary' animation='border' />
+                )}
               </span>
             </form>
           </div>
