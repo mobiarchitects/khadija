@@ -8,7 +8,7 @@ export default function IconsNav() {
   const [open, setOpen] = useState(false);
   return (
     <div className='icons-nav'>
-      <img className='panier' src='/assets/panier.svg' alt='panier' />
+      {/* <img className='panier' src='/assets/panier.svg' alt='panier' /> */}
       <img
         className='notif'
         src='/assets/notification.svg'
