@@ -70,14 +70,14 @@ export default function Login() {
           </div>
           <div>
             <form className='form-login' onSubmit={handleData}>
-              {!login.isAuth && (
+              {/* {login.isAuth === false && (
                 <Alert
                   variant='filled'
                   sx={{ padding: '5px', marginBottom: '5px' }}
                   severity='error'>
                   {login.error}
                 </Alert>
-              )}
+              )} */}
               <input
                 className='email'
                 type='email'
