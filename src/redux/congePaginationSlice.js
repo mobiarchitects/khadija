@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { getJwToken } from '../utils/getJwToken';
 
 export const fetchCongePaginations = createAsyncThunk(
   'fetch/congePagination',
@@ -8,7 +9,7 @@ export const fetchCongePaginations = createAsyncThunk(
     const response = await axios.get(
       'http://rh-api-dev-mobiarchitects.azurewebsites.net/api/leaves/GetAllLeaves?pageNumber=' +
         numPage +
-        '&pageSize=3',
+        '&pageSize=3',   { headers: getJwToken() },
     );
     return response.data.data;
   },

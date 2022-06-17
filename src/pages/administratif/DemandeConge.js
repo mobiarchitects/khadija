@@ -8,6 +8,7 @@ import { fetchConges } from '../../redux/congesSlice';
 import { fetchProjects } from '../../redux/projectsSlice';
 import { fetchSituationsProjects } from '../../redux/situationsProjectsSlice';
 import { fetchTypeConges } from '../../redux/typeCongesSlice';
+import { Link } from 'react-router-dom';
 
 export default function DemandeConge() {
   const dispatch = useDispatch();
@@ -34,16 +35,24 @@ export default function DemandeConge() {
         flexDirection: 'column',
       }}>
       <Grid sx={{ paddingBottom: '20px' }}>
-        <a
-          style={{ textDecoration: 'none', color: '#81869A', fontSize: '14px' }}
-          href='/Administratif'>
+        <Link
+          to='/Administratif'
+          style={{
+            textDecoration: 'none',
+            color: '#81869A',
+            fontSize: '14px',
+          }}>
           Services&nbsp;&gt;&nbsp;
-        </a>
-        <a
-          style={{ textDecoration: 'none', color: '#81869A', fontSize: '14px' }}
-          href='/demandeAbsence'>
+        </Link>
+        <Link
+          to='/demandeAbsence'
+          style={{
+            textDecoration: 'none',
+            color: '#81869A',
+            fontSize: '14px',
+          }}>
           Demandes d'absences
-        </a>
+        </Link>
       </Grid>
       <Grid
         sx={{

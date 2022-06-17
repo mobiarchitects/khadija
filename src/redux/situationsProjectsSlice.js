@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { getJwToken } from '../utils/getJwToken';
 
 export const fetchSituationsProjects = createAsyncThunk(
   'situationsProjects/fetchSituationsProjects',
   async () => {
     const response = await axios.get(
-      'http://rh-api-dev-mobiarchitects.azurewebsites.net/api/refsituationsproject',
+      'http://rh-api-dev-mobiarchitects.azurewebsites.net/api/refsituationsproject',   { headers: getJwToken() },
     );
     return response.data.data;
   },

@@ -5,6 +5,7 @@ import '../styles/navBar.css';
 
 export default function IconsNav() {
   const login = useSelector((state) => state.login);
+
   const [open, setOpen] = useState(false);
   return (
     <div className='icons-nav'>
@@ -20,7 +21,7 @@ export default function IconsNav() {
         alt='avatar'
         onClick={(e) => setOpen(true)}
       />
-      <Menu
+      {/* <Menu
         id='demo-positioned-menu'
         aria-labelledby='demo-positioned-button'
         open={open}
@@ -36,7 +37,7 @@ export default function IconsNav() {
         <MenuItem>Profile</MenuItem>
         <MenuItem>My account</MenuItem>
         <MenuItem>Logout</MenuItem>
-      </Menu>
+      </Menu> */}
     </div>
   );
 }

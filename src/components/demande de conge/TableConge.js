@@ -38,7 +38,7 @@ export default function TableConge({ handlePaginationClick }) {
     const dateD = new Date(conge.startDate);
     const datef = new Date(conge.endDate);
     const styleStatus =
-      conge.labelStatus === 'En_cours' ? (
+      conge.labelStatus === 'En cours' ? (
         <TableCell
           sx={{ fontSize: '15px', fontWeight: '600', color: '#000000' }}
           align='center'
