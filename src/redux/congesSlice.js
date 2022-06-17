@@ -4,7 +4,7 @@ import { getJwToken } from '../utils/getJwToken';
 
 export const fetchConges = createAsyncThunk('conges/fetchConges', async () => {
   const response = await axios.get(
-    'http://rh-api-dev-mobiarchitects.azurewebsites.net/api/leaves/getAllLeaves',
+    'http://rh-api-dev-mobiarchitects.azurewebsites.net/api/leaves/getprofilleaves',
     { headers: getJwToken() },
   );
 

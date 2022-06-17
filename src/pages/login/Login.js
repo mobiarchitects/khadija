@@ -1,7 +1,7 @@
-import { Alert, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import React, { useState } from 'react';
 import './login.css';
-import { loginFail, loginPending, loginSuccess } from '../../redux/loginSlice';
+import { loginFail, loginPending } from '../../redux/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'react-bootstrap';
 
@@ -87,7 +87,6 @@ export default function Login() {
                 value={email}
                 required
               />
-
               <input
                 className='password'
                 type='password'

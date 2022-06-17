@@ -6,49 +6,49 @@ import ServicesAdminItem from './ServicesAdminItem';
 const listServicesAdmin = [
   {
     id: 1,
-    title: 'Absences',
+    title: 'Demande congé',
     icon: <img src='/assets/calendar(1).svg' alt='Absences' />,
     lien: '/demandeAbsence',
   },
   {
     id: 2,
-    title: 'infos personnelles',
+    title: 'Demande Attestation',
     icon: <img src='/assets/man(1).svg' alt='man-1' />,
     lien: '/demandeInfosPersonnelles',
   },
   {
     id: 3,
-    title: 'Délégations',
+    title: 'Déplacement client',
     icon: <img src='/assets/team.svg' alt='team' />,
     lien: '/demandeDelegations',
   },
   {
     id: 4,
-    title: 'Attestations',
+    title: 'Réclamation interne',
     icon: <img src='/assets/paper.svg' alt='paper' />,
     lien: '/demandeAttestations',
   },
   {
     id: 5,
-    title: 'Recore sur Prime',
+    title: 'Projets Client',
     icon: <img src='/assets/wallet.svg' alt='wallet' />,
     lien: '/demandeRecoresurPrime',
   },
   {
     id: 6,
-    title: 'RCAR',
+    title: 'Espace stagaires',
     icon: <img src='/assets/grandfather.svg' alt='grandfather' />,
     lien: '/demandeRCAR',
   },
   {
     id: 7,
-    title: 'Recore',
+    title: 'Donnée Personnelles',
     icon: <img src='/assets/books.svg' alt='books' />,
     lien: '/demandeRecore',
   },
   {
     id: 8,
-    title: 'Bulletins de paie',
+    title: 'Délégations',
     icon: <img src='/assets/approved.svg' alt='approved' />,
     lien: '/demandeBulletinsDePaie',
   },];

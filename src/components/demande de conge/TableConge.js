@@ -13,17 +13,17 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import './tableConge.css';
 import moment from 'moment';
-import ReactPaginate from 'react-paginate';
+// import ReactPaginate from 'react-paginate';
 // import { fetchCongePaginations } from '../../redux/congePaginationSlice';
 
-export default function TableConge({ handlePaginationClick }) {
-  const congesPaginations = useSelector((state) => state.congePations.data);
+export default function TableConge() {
+  const conges = useSelector((state) => state.conges.data);
 
-  console.log(congesPaginations);
-  function getDifferenceInDays(date1, date2) {
-    const diffInMs = Math.abs(date1 - date2);
-    return diffInMs / (1000 * 60 * 60 * 24);
-  }
+  // console.log(congesPaginations);
+  // function getDifferenceInDays(date1, date2) {
+  //   const diffInMs = Math.abs(date1 - date2);
+  //   return diffInMs / (1000 * 60 * 60 * 24);
+  // }
   // const handlePageClick = async (data) => {
   //   let currentPage = data.selected + 1;
   //   console.log(currentPage);
@@ -32,27 +32,27 @@ export default function TableConge({ handlePaginationClick }) {
 
   // const conges = useSelector((state) => state.conges.data);
 
-  const rowConges = congesPaginations.map((conge) => {
+  const rowConges = conges.map((conge) => {
     const dateDebut = moment(conge.startDate).format('DD/MM/YYYY');
     const dateFin = moment(conge.endDate).format('DD/MM/YYYY');
-    const dateD = new Date(conge.startDate);
-    const datef = new Date(conge.endDate);
-    const styleStatus =
-      conge.labelStatus === 'En cours' ? (
-        <TableCell
-          sx={{ fontSize: '15px', fontWeight: '600', color: '#000000' }}
-          align='center'
-          style={{ color: '#D75E11' }}>
-          {conge.labelStatus}
-        </TableCell>
-      ) : (
-        <TableCell
-          sx={{ fontSize: '15px', fontWeight: '600', color: '#000000' }}
-          align='center'
-          style={{ color: '#11C948' }}>
-          {conge.labelStatus}
-        </TableCell>
-      );
+    // const dateD = new Date(conge.startDate);
+    // const datef = new Date(conge.endDate);
+    // const styleStatus =
+    //   conge.labelStatus === 'En cours' ? (
+    //     <TableCell
+    //       sx={{ fontSize: '15px', fontWeight: '600', color: '#000000' }}
+    //       align='center'
+    //       style={{ color: '#D75E11' }}>
+    //       {conge.labelStatus}
+    //     </TableCell>
+    //   ) : (
+    //     <TableCell
+    //       sx={{ fontSize: '15px', fontWeight: '600', color: '#000000' }}
+    //       align='center'
+    //       style={{ color: '#11C948' }}>
+    //       {conge.labelStatus}
+    //     </TableCell>
+    //   );
 
     return (
       <TableRow key={conge.id}>
@@ -74,14 +74,14 @@ export default function TableConge({ handlePaginationClick }) {
         <TableCell
           sx={{ fontSize: '15px', fontWeight: '600', color: '#000000' }}
           align='center'>
-          {getDifferenceInDays(dateD, datef)}
+          {conge.nombreJours}
         </TableCell>
         <TableCell
           sx={{ fontSize: '15px', fontWeight: '600', color: '#000000' }}
           align='center'>
           {conge.labelType}
         </TableCell>
-        {styleStatus}
+        {conge.labelStatus}
       </TableRow>
     );
   });
@@ -115,7 +115,7 @@ export default function TableConge({ handlePaginationClick }) {
           </Table>
         </TableContainer>
       </Stack>
-      <Stack spacing={2}>
+      {/* <Stack spacing={2}>
         <ReactPaginate
           previousLabel={' < '}
           breakLabel={'...'}
@@ -133,7 +133,7 @@ export default function TableConge({ handlePaginationClick }) {
           breakLinkClassName={'page-link'}
           activeClassName={'active'}
         />
-      </Stack>
+      </Stack> */}
     </Box>
   );
 }
