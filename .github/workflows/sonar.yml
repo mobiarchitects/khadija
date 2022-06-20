@@ -15,6 +15,10 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
+        with:
+          args: >
+            sonar.projectKey=mobiarchitects_khadija
+            sonar.organization=mobiarchitects
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: 050af12bd4a5d590a924574a1a7f7fcbb795e9ce
