@@ -18,11 +18,10 @@ jobs:
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       with:
-          projectBaseDir: my-custom-directory
           args: >
             -Dsonar.organization=mobiarchitects_khadija
             -Dsonar.projectKey=mobiarchitects     
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_TOKEN: 8acaec5dd3092ac55e9f65208a0ebafa0da25ed8
         
