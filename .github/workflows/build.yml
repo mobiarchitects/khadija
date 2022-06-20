@@ -20,5 +20,5 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
             arg: >
-                -Dsonar.projectKey: mobiarchitects_khadija
-                -Dsonar.organization: mobiarchitects
+                -Dsonar.projectKey=mobiarchitects_khadija
+                -Dsonar.organization=mobiarchitects
